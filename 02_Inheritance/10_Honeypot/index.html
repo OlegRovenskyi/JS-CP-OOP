@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Honeypot</title>
+	<script src="10_inherits.js"></script>
+	<script src="10_honeypot.js"></script>
+</head>
+<body>
+<script>
+	let child = new Child();
+	child.setField(555);
+	console.log(child.getField()); // exception
+</script>
+
+</body>
+</html>

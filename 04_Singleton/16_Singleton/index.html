@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Singleton</title>
+	<script src="16_addSingletonGetter.js"></script>
+	<script src="16_Singleton.js"></script>
+</head>
+<body>
+<script>
+	let p1 = Person.getInstance(),
+			p2 = Person.getInstance();
+
+	p1.setFirstName("Anna");
+	p2.setFirstName("Mariia");
+
+	console.log( p1.getFirstName() );	// => Mariia
+	console.log( p2.getFirstName() );	// => Mariia
+	console.log (p1 === p2);		// => true
+</script>
+</body>
+</html>

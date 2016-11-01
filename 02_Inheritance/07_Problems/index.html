@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Inheritance Problems</title>
+	<script src="07_inheritance.js"></script>
+</head>
+<body>
+<script>
+	let child = new Child();
+	console.log(child);
+	console.log("child.getValue()");
+	console.log(child.getValue()); //=>false
+	
+	console.log("Child.prototype.constructor === Child");
+	console.log(Child.prototype.constructor === Child); // => false
+	console.log("Child.prototype.constructor === Parent");
+	console.log(Child.prototype.constructor === Parent); // => True
+</script>
+
+</body>
+</html>
