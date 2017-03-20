@@ -1,6 +1,6 @@
-// if we call constructor without new: 
-//	1. constructor return undefined, 
-//	2. this in the function will be global object and add some properties to it.
+// if we call constructor without new:
+//    1. constructor return undefined,
+//    2. this in the function will be global object and add some properties to it.
 
 let obj1 = Person("Anna", "Vasileva");
 
@@ -17,22 +17,24 @@ console.log(this.firstName_);
 // we omit let because this variable has been already declared in 05_Person.js
 Person = function( firstName, lastName, opt_age ) {
 
-	// check
-	if ( !(this instanceof Person) ) {
-		return new Person( firstName, lastName, opt_age );
-	}
+    // check
+    // if ( !(this instanceof Person) ) {
+    // or
+    if ( !(Person.prototype.isPrototypeOf(this)) ) {
+        return new Person( firstName, lastName, opt_age );
+    }
 
-	// fields are after check
-	this.firstName_ = firstName;
-	this.lastName_ = lastName;
-	if(opt_age) {
-		this.age_ = opt_age;
-	}
+    // fields are after check
+    this.firstName_ = firstName;
+    this.lastName_ = lastName;
+    if(opt_age) {
+        this.age_ = opt_age;
+    }
 };
 
 // methods
 Person.prototype.getFirstName = function() {
-	return this.firstName_;
+    return this.firstName_;
 }
 
 // call constructor with out new, but we have check in the constructor
